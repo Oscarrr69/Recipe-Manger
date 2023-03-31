@@ -1,0 +1,336 @@
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230324073756)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "image_url" varchar, "bio" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230324073756"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRecipes (20230324080858)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "instructions" text, "minutes_to_complete" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230324080858"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-24 08:11:29.106072"], ["updated_at", "2023-03-24 08:11:29.106072"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserIdToRecipes (20230324081539)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recipes" ADD "user_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230324081539"]]
+  [1m[36mTRANSACTION (12.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/me" for 127.0.0.1 at 2023-03-29 12:09:58 +0300
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.26ms)
+Completed 401 Unauthorized in 36ms (Views: 2.9ms | ActiveRecord: 0.7ms | Allocations: 6859)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-29 12:10:37 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"ismahan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "image_url"=>"data:image/jpeg;base64,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", "bio"=>"new user"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ismahan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (5.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "image_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "ismahan"], ["password_digest", "$2a$12$IyAGN.EymWOk7yB3RJdO/egEl4yA7GUzs1yJ7OZUxPszuqIiMa7GK"], ["image_url", "data:image/jpeg;base64,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"], ["bio", "new user"], ["created_at", "2023-03-29 09:10:37.521645"], ["updated_at", "2023-03-29 09:10:37.521645"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "ismahan"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (29.8ms)
+Completed 201 Created in 467ms (Views: 53.6ms | ActiveRecord: 17.2ms | Allocations: 16496)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-03-29 12:10:37 +0300
+Processing by RecipesController#index as */*
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 201 Created in 7ms (Views: 3.7ms | ActiveRecord: 0.5ms | Allocations: 933)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2023-03-29 12:11:00 +0300
+Processing by RecipesController#create as */*
+  Parameters: {"title"=>"My Awesome Recipe", "instructions"=>"Here's how you make it.\n  \n## Ingredients\n\n- 1c Sugar\n- 1c Spice\n\n## Instructions\n\n**Mix** sugar and spice. _Bake_ for 30 minutes.\n  ", "minutes_to_complete"=>"30"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:14:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:14:in `create'
+  [1m[36mRecipe Create (0.4ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Awesome Recipe"], ["instructions", "Here's how you make it.\n  \n## Ingredients\n\n- 1c Sugar\n- 1c Spice\n\n## Instructions\n\n**Mix** sugar and spice. _Bake_ for 30 minutes.\n  "], ["minutes_to_complete", 30], ["created_at", "2023-03-29 09:11:00.699578"], ["updated_at", "2023-03-29 09:11:00.699578"], ["user_id", 1]]
+  ↳ app/controllers/recipes_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:14:in `create'
+[active_model_serializers] Rendered RecipeSerializer with ActiveModelSerializers::Adapter::Attributes (1.41ms)
+Completed 201 Created in 46ms (Views: 5.5ms | ActiveRecord: 5.8ms | Allocations: 8952)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-03-29 12:11:00 +0300
+Processing by RecipesController#index as */*
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.47ms)
+Completed 201 Created in 12ms (Views: 10.8ms | ActiveRecord: 0.5ms | Allocations: 2005)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2023-03-29 12:11:11 +0300
+Processing by RecipesController#create as */*
+  Parameters: {"title"=>"My Awesome Recipe", "instructions"=>"jshfdiwhf", "minutes_to_complete"=>"30"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:14:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/recipes_controller.rb:14:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 422 Unprocessable Entity in 27ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 4589)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-29 12:11:26 +0300
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:19:in `destroy'
+Completed 204 No Content in 4ms (ActiveRecord: 0.3ms | Allocations: 673)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 12:11:37 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"ismahan", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ismahan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:9:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.22ms)
+Completed 201 Created in 259ms (Views: 4.7ms | ActiveRecord: 0.8ms | Allocations: 1977)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-29 12:38:45 +0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (32.66ms)
+Completed 201 Created in 68ms (Views: 44.3ms | ActiveRecord: 1.8ms | Allocations: 20760)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-03-29 12:38:46 +0300
+Processing by RecipesController#index as */*
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.77ms)
+Completed 201 Created in 11ms (Views: 8.3ms | ActiveRecord: 0.5ms | Allocations: 2262)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-29 12:38:51 +0300
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:19:in `destroy'
+Completed 204 No Content in 3ms (ActiveRecord: 0.2ms | Allocations: 610)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-29 12:39:24 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"oska", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "image_url"=>"data:image/jpeg;base64,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", "bio"=>"new user"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "oska"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "image_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "oska"], ["password_digest", "$2a$12$ZewXNDDoJo8eCyz.vAUkb.A783uk0JnOifOYO19T9B4sNEmnZ32lS"], ["image_url", "data:image/jpeg;base64,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"], ["bio", "new user"], ["created_at", "2023-03-29 09:39:24.394828"], ["updated_at", "2023-03-29 09:39:24.394828"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "oska"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (10.45ms)
+Completed 201 Created in 408ms (Views: 11.4ms | ActiveRecord: 8.0ms | Allocations: 7031)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-03-29 12:39:24 +0300
+Processing by RecipesController#index as */*
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.0ms)
+Completed 201 Created in 12ms (Views: 9.4ms | ActiveRecord: 0.7ms | Allocations: 1959)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2023-03-29 12:39:41 +0300
+Processing by RecipesController#create as */*
+  Parameters: {"title"=>"My Awesome Recipe", "instructions"=>"Here's how you make it.\n  \n## Ingredients\n\n- 1c Sugar\n- 1c Spice\n\n## Instructions\n\n**Mix** sugar and spice. _Bake_ for 30 minutes.\n  ", "minutes_to_complete"=>"30"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:14:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:14:in `create'
+  [1m[36mRecipe Create (0.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Awesome Recipe"], ["instructions", "Here's how you make it.\n  \n## Ingredients\n\n- 1c Sugar\n- 1c Spice\n\n## Instructions\n\n**Mix** sugar and spice. _Bake_ for 30 minutes.\n  "], ["minutes_to_complete", 30], ["created_at", "2023-03-29 09:39:41.245968"], ["updated_at", "2023-03-29 09:39:41.245968"], ["user_id", 2]]
+  ↳ app/controllers/recipes_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:14:in `create'
+[active_model_serializers] Rendered RecipeSerializer with ActiveModelSerializers::Adapter::Attributes (1.95ms)
+Completed 201 Created in 31ms (Views: 2.8ms | ActiveRecord: 9.9ms | Allocations: 5270)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-03-29 12:39:41 +0300
+Processing by RecipesController#index as */*
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.22ms)
+Completed 201 Created in 18ms (Views: 15.9ms | ActiveRecord: 1.1ms | Allocations: 3064)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230324073756)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230324073756"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRecipes (20230324080858)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "instructions" text, "minutes_to_complete" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230324080858"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateFavorites (20230330151127)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "origin" varchar, "comment" varchar, "user_id" integer NOT NULL, "recipe_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_d15744e438"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_22ca1dd2e6"
+FOREIGN KEY ("recipe_id")
+  REFERENCES "recipes" ("id")
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_favorites_on_user_id" ON "favorites" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_favorites_on_recipe_id" ON "favorites" ("recipe_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230330151127"]]
+  [1m[36mTRANSACTION (11.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-30 17:21:26.029540"], ["updated_at", "2023-03-30 17:21:26.029540"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/create" for 127.0.0.1 at 2023-03-30 21:36:44 +0300
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/create"):
+  
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 21:37:39 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Flata", "email"=>"flata@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flata"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Flata"], ["email", "flata@gmail.com"], ["password_digest", "$2a$12$c0bDB4ggSaW/Eis2xQJFnOuI.FZpldR9LyALYsvvxs2DczMNSRl4m"], ["created_at", "2023-03-30 18:37:41.931943"], ["updated_at", "2023-03-30 18:37:41.931943"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (10.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Flata"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (59.22ms)
+Completed 500 Internal Server Error in 1962ms (ActiveRecord: 19.2ms | Allocations: 20758)
+
+
+  
+NoMethodError (undefined method `image_url' for #<User:0x00007f4b04360be0>):
+  
+app/controllers/users_controller.rb:8:in `create'
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 21:39:06 +0300
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Flata", "email"=>"flata@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flata"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flata"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.39ms)
+Completed 422 Unprocessable Entity in 1255ms (Views: 6.6ms | ActiveRecord: 6.2ms | Allocations: 14354)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 21:39:57 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"zizu", "email"=>"zizu@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "zizu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "zizu"], ["email", "zizu@gmail.com"], ["password_digest", "$2a$12$HJ.g4oPKCG1LikgnNjAzmemOjhAYghgIS/XcsDxTP4BfPXcjFYEYu"], ["created_at", "2023-03-30 18:39:59.064948"], ["updated_at", "2023-03-30 18:39:59.064948"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "zizu"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (97.2ms)
+Completed 500 Internal Server Error in 1631ms (ActiveRecord: 17.5ms | Allocations: 11755)
+
+
+  
+NoMethodError (undefined method `image_url' for #<User:0x00007f4f7400acb0>):
+  
+app/controllers/users_controller.rb:8:in `create'
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 21:40:11 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"zizu", "email"=>"zizu@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "zizu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "zizu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 422 Unprocessable Entity in 248ms (Views: 1.2ms | ActiveRecord: 0.8ms | Allocations: 3137)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 21:40:15 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"zizu", "email"=>"zizu@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "zizu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "zizu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 422 Unprocessable Entity in 256ms (Views: 0.8ms | ActiveRecord: 1.4ms | Allocations: 3138)
+
+
