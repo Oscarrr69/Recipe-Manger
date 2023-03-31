@@ -334,3 +334,947 @@ Processing by UsersController#create as */*
 Completed 422 Unprocessable Entity in 256ms (Views: 0.8ms | ActiveRecord: 1.4ms | Allocations: 3138)
 
 
+Started GET "/" for 127.0.0.1 at 2023-03-31 10:38:46 +0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/user/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/user/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 33.4ms | Allocations: 341)
+Completed 200 OK in 64ms (Views: 51.7ms | ActiveRecord: 0.0ms | Allocations: 1807)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-03-31 10:38:47 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/recipes" for 127.0.0.1 at 2023-03-31 10:39:23 +0300
+Processing by RecipesController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.37ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 14ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 652)
+
+
+Started GET "/signup" for 127.0.0.1 at 2023-03-31 10:39:34 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-31 10:40:05 +0300
+Processing by UsersController#show as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.26ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 249)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-03-31 12:54:00 +0300
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.52ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 29ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 675)
+
+
+Started POST "/create" for 127.0.0.1 at 2023-03-31 13:02:11 +0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  "username" : "Flata",
+  "email" : "falata@gmail.com",
+  "password" "1234"
+}
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 82ms (Allocations: 5392)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (783: unexpected token at '{
+  "username" : "Flata",
+  "email" : "falata@gmail.com",
+  "password" "1234"
+}'):
+  
+app/controllers/users_controller.rb:28:in `user_params'
+app/controllers/users_controller.rb:13:in `create'
+Started POST "/create" for 127.0.0.1 at 2023-03-31 13:03:06 +0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  "username" : "Flata",
+  "email" : "falata@gmail.com",
+  "password" "1234"
+}
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 23ms (Allocations: 1473)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (783: unexpected token at '{
+  "username" : "Flata",
+  "email" : "falata@gmail.com",
+  "password" "1234"
+}'):
+  
+app/controllers/users_controller.rb:28:in `user_params'
+app/controllers/users_controller.rb:13:in `create'
+Started POST "/create" for 127.0.0.1 at 2023-03-31 13:03:37 +0300
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  "username" : "Flata",
+  "email" : "falata@gmail.com",
+  "password" "1234"
+}
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 70ms (ActiveRecord: 0.0ms | Allocations: 5397)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (783: unexpected token at '{
+  "username" : "Flata",
+  "email" : "falata@gmail.com",
+  "password" "1234"
+}'):
+  
+app/controllers/users_controller.rb:28:in `user_params'
+app/controllers/users_controller.rb:13:in `create'
+Started POST "/create" for 127.0.0.1 at 2023-03-31 13:05:35 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Flata", "email"=>"falata@gmail.com", "password"=>"[FILTERED]"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flata"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flata"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Completed 500 Internal Server Error in 1263ms (ActiveRecord: 9.2ms | Allocations: 8300)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 2)):
+  
+app/controllers/users_controller.rb:17:in `create'
+Started POST "/create" for 127.0.0.1 at 2023-03-31 13:06:44 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Flata", "email"=>"falata@gmail.com", "password"=>"[FILTERED]"}
+[31mUnpermitted parameter: :password[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flata"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flata"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 9.2ms | Allocations: 7620)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 2)):
+  
+app/controllers/users_controller.rb:17:in `create'
+Started POST "/create" for 127.0.0.1 at 2023-03-31 13:08:00 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Flata", "email"=>"falata@gmail.com", "password"=>"[FILTERED]"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flata"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flata"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Completed 500 Internal Server Error in 1216ms (ActiveRecord: 9.8ms | Allocations: 7603)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 2)):
+  
+app/controllers/users_controller.rb:17:in `create'
+Started POST "/create" for 127.0.0.1 at 2023-03-31 13:09:03 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Flata", "email"=>"falata@gmail.com", "password"=>"[FILTERED]"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flata"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flata"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.41ms)
+Completed 422 Unprocessable Entity in 1313ms (Views: 7.9ms | ActiveRecord: 13.0ms | Allocations: 10420)
+
+
+Started POST "/create" for 127.0.0.1 at 2023-03-31 13:09:36 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Khadar", "email"=>"khadar@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Khadar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Khadar"], ["email", "khadar@gmail.com"], ["password_digest", "$2a$12$uaVftBEl6S1ujdNdjruZiOaQzG39JuiHyLAAQ.6eORIi2MRM.JyTu"], ["created_at", "2023-03-31 10:09:37.882884"], ["updated_at", "2023-03-31 10:09:37.882884"]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Khadar"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (51.31ms)
+Completed 500 Internal Server Error in 1222ms (ActiveRecord: 14.0ms | Allocations: 11615)
+
+
+  
+NoMethodError (undefined method `image_url' for #<User:0x00007fdf307f5280>):
+  
+app/controllers/users_controller.rb:15:in `create'
+Started POST "/create" for 127.0.0.1 at 2023-03-31 13:11:39 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Khadar", "email"=>"khadar@gmail.com", "password"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Khadar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Khadar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.82ms)
+Completed 422 Unprocessable Entity in 1285ms (Views: 4.4ms | ActiveRecord: 10.7ms | Allocations: 8253)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-31 13:12:02 +0300
+Processing by SessionsController#login as */*
+  Parameters: {"username"=>"Khadar", "password"=>"[FILTERED]"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.44ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 29ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 281)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-31 13:14:28 +0300
+Processing by SessionsController#login as */*
+  Parameters: {"username"=>"Khadar", "password"=>"[FILTERED]"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 234)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-31 13:16:13 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Khadar", "password"=>"[FILTERED]"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Khadar"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[active_model_serializers]   [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "favorites" ON "recipes"."id" = "favorites"."recipe_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:10:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (107.93ms)
+Completed 200 OK in 1338ms (Views: 109.8ms | ActiveRecord: 12.5ms | Allocations: 14681)
+
+
+Started GET "/recipe" for 127.0.0.1 at 2023-03-31 13:18:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/recipe"):
+  
+Started GET "/recipes" for 127.0.0.1 at 2023-03-31 13:18:21 +0300
+Processing by RecipesController#index as */*
+  Parameters: {"username"=>"Khadar", "password"=>"[FILTERED]"}
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 201 Created in 25ms (Views: 20.9ms | ActiveRecord: 0.9ms | Allocations: 909)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "carter_stehr"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "carter_stehr"], ["email", "christinia_torp@johnson.com"], ["password_digest", "$2a$12$eMxOzXGWPGCYSzJHc1fFV.EWvhxnRHvVYPrYOBXZXjG7TqkTzfvju"], ["created_at", "2023-03-31 10:32:52.421412"], ["updated_at", "2023-03-31 10:32:52.421412"]]
+  [1m[36mTRANSACTION (17.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "darrel.funk"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "darrel.funk"], ["email", "francisco_deckow@doyle-crooks.io"], ["password_digest", "$2a$12$AVEBYn5MdQgA3QHLirPZFucHMIJqCtTn/CqC7KWtQ.Uwu7MH3W6YW"], ["created_at", "2023-03-31 10:32:52.703767"], ["updated_at", "2023-03-31 10:32:52.703767"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kenny_deckow"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "kenny_deckow"], ["email", "donte_pfeffer@heidenreich.info"], ["password_digest", "$2a$12$Xv7/2pbkZ3h.9Jxp3tInq..MWM.dGSKVCx5IW3R6uUNVHFAXT2KW6"], ["created_at", "2023-03-31 10:32:52.978096"], ["updated_at", "2023-03-31 10:32:52.978096"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "caleb.wiza"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "caleb.wiza"], ["email", "stefan_schulist@okuneva.com"], ["password_digest", "$2a$12$5SrVc3m6DKlowks5Wj9T5uuwhd0siSwGrRVlwasgEq.YuioHpLL5q"], ["created_at", "2023-03-31 10:32:53.252100"], ["updated_at", "2023-03-31 10:32:53.252100"]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "reda.nicolas"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "reda.nicolas"], ["email", "sung@schaefer.io"], ["password_digest", "$2a$12$T8BR5OHH/ML6OrJRPNGuLO2vsqv1o5Ax4kYXHimPGg7PHpM.IVLTO"], ["created_at", "2023-03-31 10:32:53.536596"], ["updated_at", "2023-03-31 10:32:53.536596"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jamar.yost"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "jamar.yost"], ["email", "miki.goyette@wiegand.io"], ["password_digest", "$2a$12$MwlH1Dawkt/m3Iq9oY5jgu2tWhwBjblGgOyHcd2J.qFmUiWhka4VS"], ["created_at", "2023-03-31 10:32:53.839513"], ["updated_at", "2023-03-31 10:32:53.839513"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "hortensia"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "hortensia"], ["email", "hyman.koss@oreilly.com"], ["password_digest", "$2a$12$1tTnLgz.xOe1vQ/omQ9cWujgNTVcoG9tP4jElKhlIA/le3PxfliyO"], ["created_at", "2023-03-31 10:32:54.121126"], ["updated_at", "2023-03-31 10:32:54.121126"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "loria_schumm"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "loria_schumm"], ["email", "lashawna@cole-ullrich.org"], ["password_digest", "$2a$12$mVSuHG01sBbHVr.Q6eD8UuqdRiLEEzFwUln51M3zyfjuUXDOY0LMO"], ["created_at", "2023-03-31 10:32:54.395604"], ["updated_at", "2023-03-31 10:32:54.395604"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kina.fisher"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "kina.fisher"], ["email", "lyn_nicolas@tillman.net"], ["password_digest", "$2a$12$zSdnJiewMLm6yjgd78peD.TLzmvHnLje0Ze5SnZfKNsPu213bef46"], ["created_at", "2023-03-31 10:32:54.670357"], ["updated_at", "2023-03-31 10:32:54.670357"]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "garret.purdy"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "garret.purdy"], ["email", "mikki@wunsch.io"], ["password_digest", "$2a$12$DqSNQTZ1GYjC67N4xavtWuuAkDZa./uk2iTIf1bEwFwMGLBUmCJAi"], ["created_at", "2023-03-31 10:32:54.953252"], ["updated_at", "2023-03-31 10:32:54.953252"]]
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "anisa.larkin"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "anisa.larkin"], ["email", "orpha_ziemann@hessel-collier.biz"], ["password_digest", "$2a$12$Chi56LAe6h93q03RU.kxIOnyQKE7ok9X3hhlqMi9LuOmwWGLZjKCa"], ["created_at", "2023-03-31 10:32:55.234663"], ["updated_at", "2023-03-31 10:32:55.234663"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "vern_ortiz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "vern_ortiz"], ["email", "jutta.tromp@jacobs-breitenberg.biz"], ["password_digest", "$2a$12$I1J9o04dDBj2gu/Jv4I99.6xHoNOHdQ/LaEat2rtWWCmnGlRG8C0S"], ["created_at", "2023-03-31 10:32:55.502770"], ["updated_at", "2023-03-31 10:32:55.502770"]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dale_funk"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "dale_funk"], ["email", "leonard_dickens@stroman-bernier.name"], ["password_digest", "$2a$12$NXDVLukgaeAEy2HHvRG2xu2LlrtVPa4hUQsfNflhca6pxHl1Ey3iq"], ["created_at", "2023-03-31 10:32:55.775856"], ["updated_at", "2023-03-31 10:32:55.775856"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "lashon.lynch"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "lashon.lynch"], ["email", "ike@strosin.co"], ["password_digest", "$2a$12$sz5Y3.vKY0pKN5oD6maAJ.1zXFAbF6I5oOPe88yDsnro3HQNSu77K"], ["created_at", "2023-03-31 10:32:56.046732"], ["updated_at", "2023-03-31 10:32:56.046732"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "thad_brakus"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "thad_brakus"], ["email", "tamala@sauer-huel.biz"], ["password_digest", "$2a$12$abtZJ899LA7yFYTVDqk6JeGxxhaVKNMN6lHxQsBXcNv1a7nnQIDFu"], ["created_at", "2023-03-31 10:32:56.315638"], ["updated_at", "2023-03-31 10:32:56.315638"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pasta Carbonara"], ["instructions", "Granny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream."], ["minutes_to_complete", 24], ["created_at", "2023-03-31 10:32:56.338993"], ["updated_at", "2023-03-31 10:32:56.338993"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Fettuccine Alfredo"], ["instructions", "Two buttermilk waffles, topped with whipped cream and maple syrup, a side of two eggs served any style, and your choice of smoked bacon or smoked ham."], ["minutes_to_complete", 66], ["created_at", "2023-03-31 10:32:56.351324"], ["updated_at", "2023-03-31 10:32:56.351324"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Fish and Chips"], ["instructions", "Fresh Norwegian salmon, lightly brushed with our herbed Dijon mustard sauce, with choice of two sides."], ["minutes_to_complete", 44], ["created_at", "2023-03-31 10:32:56.363799"], ["updated_at", "2023-03-31 10:32:56.363799"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Tiramisù"], ["instructions", "Three eggs with cilantro, tomatoes, onions, avocados and melted Emmental cheese. With a side of roasted potatoes, and your choice of toast or croissant."], ["minutes_to_complete", 31], ["created_at", "2023-03-31 10:32:56.376019"], ["updated_at", "2023-03-31 10:32:56.376019"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Hummus"], ["instructions", "Granny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream."], ["minutes_to_complete", 84], ["created_at", "2023-03-31 10:32:56.388143"], ["updated_at", "2023-03-31 10:32:56.388143"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Hummus"], ["instructions", "Three egg whites with spinach, mushrooms, caramelized onions, tomatoes and low-fat feta cheese. With herbed quinoa, and your choice of rye or whole-grain toast."], ["minutes_to_complete", 31], ["created_at", "2023-03-31 10:32:56.399645"], ["updated_at", "2023-03-31 10:32:56.399645"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Katsu Curry"], ["instructions", "Three egg omelet with Roquefort cheese, chives, and ham. With a side of roasted potatoes, and your choice of toast or croissant."], ["minutes_to_complete", 54], ["created_at", "2023-03-31 10:32:56.412154"], ["updated_at", "2023-03-31 10:32:56.412154"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Scotch Eggs"], ["instructions", "Two butter croissants of your choice (plain, almond or cheese). With a side of herb butter or house-made hazelnut spread."], ["minutes_to_complete", 81], ["created_at", "2023-03-31 10:32:56.425372"], ["updated_at", "2023-03-31 10:32:56.425372"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Mushroom Risotto"], ["instructions", "Granny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream."], ["minutes_to_complete", 42], ["created_at", "2023-03-31 10:32:56.437620"], ["updated_at", "2023-03-31 10:32:56.437620"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Chicken Milanese"], ["instructions", "Breaded fried chicken with waffles. Served with maple syrup."], ["minutes_to_complete", 36], ["created_at", "2023-03-31 10:32:56.449361"], ["updated_at", "2023-03-31 10:32:56.449361"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pho"], ["instructions", "Three eggs with cilantro, tomatoes, onions, avocados and melted Emmental cheese. With a side of roasted potatoes, and your choice of toast or croissant."], ["minutes_to_complete", 78], ["created_at", "2023-03-31 10:32:56.460615"], ["updated_at", "2023-03-31 10:32:56.460615"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pho"], ["instructions", "Fresh parsley, Italian sausage, shallots, garlic, sun-dried tomatoes and mozzarella cheese in an all-butter crust. With a side of mixed fruits."], ["minutes_to_complete", 72], ["created_at", "2023-03-31 10:32:56.471715"], ["updated_at", "2023-03-31 10:32:56.471715"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Peking Duck"], ["instructions", "Fresh parsley, Italian sausage, shallots, garlic, sun-dried tomatoes and mozzarella cheese in an all-butter crust. With a side of mixed fruits."], ["minutes_to_complete", 35], ["created_at", "2023-03-31 10:32:56.483210"], ["updated_at", "2023-03-31 10:32:56.483210"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pho"], ["instructions", "28-day aged 300g USDA Certified Prime Ribeye, rosemary-thyme garlic butter, with choice of two sides."], ["minutes_to_complete", 64], ["created_at", "2023-03-31 10:32:56.495492"], ["updated_at", "2023-03-31 10:32:56.495492"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Ricotta Stuffed Ravioli"], ["instructions", "Smoked salmon, poached eggs, diced red onions and Hollandaise sauce on an English muffin. With a side of roasted potatoes."], ["minutes_to_complete", 78], ["created_at", "2023-03-31 10:32:56.507640"], ["updated_at", "2023-03-31 10:32:56.507640"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Hummus"], ["instructions", "Thick slices of French toast bread, brown sugar, half-and-half and vanilla, topped with powdered sugar. With two eggs served any style, and your choice of smoked bacon or smoked ham."], ["minutes_to_complete", 19], ["created_at", "2023-03-31 10:32:56.519604"], ["updated_at", "2023-03-31 10:32:56.519604"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Peking Duck"], ["instructions", "Fresh parsley, Italian sausage, shallots, garlic, sun-dried tomatoes and mozzarella cheese in an all-butter crust. With a side of mixed fruits."], ["minutes_to_complete", 15], ["created_at", "2023-03-31 10:32:56.532905"], ["updated_at", "2023-03-31 10:32:56.532905"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Chilli con Carne"], ["instructions", "Smoked salmon, poached eggs, diced red onions and Hollandaise sauce on an English muffin. With a side of roasted potatoes."], ["minutes_to_complete", 44], ["created_at", "2023-03-31 10:32:56.545364"], ["updated_at", "2023-03-31 10:32:56.545364"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pasta Carbonara"], ["instructions", "Breaded fried chicken with waffles. Served with maple syrup."], ["minutes_to_complete", 15], ["created_at", "2023-03-31 10:32:56.557082"], ["updated_at", "2023-03-31 10:32:56.557082"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Kebab"], ["instructions", "Two butter croissants of your choice (plain, almond or cheese). With a side of herb butter or house-made hazelnut spread."], ["minutes_to_complete", 76], ["created_at", "2023-03-31 10:32:56.568913"], ["updated_at", "2023-03-31 10:32:56.568913"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pierogi"], ["instructions", "Breaded fried chicken with waffles. Served with maple syrup."], ["minutes_to_complete", 20], ["created_at", "2023-03-31 10:32:56.580832"], ["updated_at", "2023-03-31 10:32:56.580832"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Linguine with Clams"], ["instructions", "Breaded fried chicken with waffles, and a side of maple syrup."], ["minutes_to_complete", 20], ["created_at", "2023-03-31 10:32:56.594731"], ["updated_at", "2023-03-31 10:32:56.594731"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Cauliflower Penne"], ["instructions", "Breaded fried chicken with waffles, and a side of maple syrup."], ["minutes_to_complete", 16], ["created_at", "2023-03-31 10:32:56.607477"], ["updated_at", "2023-03-31 10:32:56.607477"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Mushroom Risotto"], ["instructions", "Granny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream."], ["minutes_to_complete", 49], ["created_at", "2023-03-31 10:32:56.620627"], ["updated_at", "2023-03-31 10:32:56.620627"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sushi"], ["instructions", "Granny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream."], ["minutes_to_complete", 72], ["created_at", "2023-03-31 10:32:56.633567"], ["updated_at", "2023-03-31 10:32:56.633567"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Bunny Chow"], ["instructions", "Breaded fried chicken with waffles, and a side of maple syrup."], ["minutes_to_complete", 69], ["created_at", "2023-03-31 10:32:56.647639"], ["updated_at", "2023-03-31 10:32:56.647639"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Tacos"], ["instructions", "Two buttermilk waffles, topped with whipped cream and maple syrup, a side of two eggs served any style, and your choice of smoked bacon or smoked ham."], ["minutes_to_complete", 39], ["created_at", "2023-03-31 10:32:56.658278"], ["updated_at", "2023-03-31 10:32:56.658278"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "French Fries with Sausages"], ["instructions", "Breaded fried chicken with waffles, and a side of maple syrup."], ["minutes_to_complete", 53], ["created_at", "2023-03-31 10:32:56.670307"], ["updated_at", "2023-03-31 10:32:56.670307"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Seafood Paella"], ["instructions", "Two buttermilk waffles, topped with whipped cream and maple syrup, a side of two eggs served any style, and your choice of smoked bacon or smoked ham."], ["minutes_to_complete", 75], ["created_at", "2023-03-31 10:32:56.683199"], ["updated_at", "2023-03-31 10:32:56.683199"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "minutes_to_complete", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Katsu Curry"], ["instructions", "Two butter croissants of your choice (plain, almond or cheese). With a side of herb butter or house-made hazelnut spread."], ["minutes_to_complete", 71], ["created_at", "2023-03-31 10:32:56.695610"], ["updated_at", "2023-03-31 10:32:56.695610"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "Uruguay"], ["comment", "Dolore qui voluptas deserunt."], ["user_id", 14], ["recipe_id", 14], ["created_at", "2023-03-31 10:32:56.744640"], ["updated_at", "2023-03-31 10:32:56.744640"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "French Guiana"], ["comment", "Nulla sit nesciunt minima."], ["user_id", 3], ["recipe_id", 3], ["created_at", "2023-03-31 10:32:56.756722"], ["updated_at", "2023-03-31 10:32:56.756722"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "France"], ["comment", "Temporibus quis odit provident."], ["user_id", 8], ["recipe_id", 17], ["created_at", "2023-03-31 10:32:56.770724"], ["updated_at", "2023-03-31 10:32:56.770724"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "United Kingdom"], ["comment", "Blanditiis qui facilis ipsa."], ["user_id", 18], ["recipe_id", 17], ["created_at", "2023-03-31 10:32:56.783641"], ["updated_at", "2023-03-31 10:32:56.783641"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "Republic of Korea"], ["comment", "Qui aspernatur eligendi quaerat."], ["user_id", 11], ["recipe_id", 5], ["created_at", "2023-03-31 10:32:56.795880"], ["updated_at", "2023-03-31 10:32:56.795880"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "Cayman Islands"], ["comment", "Dolore et aliquam repellat."], ["user_id", 1], ["recipe_id", 7], ["created_at", "2023-03-31 10:32:56.808806"], ["updated_at", "2023-03-31 10:32:56.808806"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "Paraguay"], ["comment", "Eum porro veritatis eos."], ["user_id", 17], ["recipe_id", 11], ["created_at", "2023-03-31 10:32:56.821830"], ["updated_at", "2023-03-31 10:32:56.821830"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "Bosnia and Herzegovina"], ["comment", "Laborum ut excepturi quia."], ["user_id", 8], ["recipe_id", 28], ["created_at", "2023-03-31 10:32:56.834652"], ["updated_at", "2023-03-31 10:32:56.834652"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "Guyana"], ["comment", "Tempora qui alias est."], ["user_id", 15], ["recipe_id", 19], ["created_at", "2023-03-31 10:32:56.846323"], ["updated_at", "2023-03-31 10:32:56.846323"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "Belgium"], ["comment", "Enim qui commodi qui."], ["user_id", 15], ["recipe_id", 11], ["created_at", "2023-03-31 10:32:56.858741"], ["updated_at", "2023-03-31 10:32:56.858741"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "United States Minor Outlying Islands"], ["comment", "Ut quis inventore nulla."], ["user_id", 12], ["recipe_id", 14], ["created_at", "2023-03-31 10:32:56.872495"], ["updated_at", "2023-03-31 10:32:56.872495"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "Tanzania"], ["comment", "Quo voluptatibus qui non."], ["user_id", 6], ["recipe_id", 13], ["created_at", "2023-03-31 10:32:56.886588"], ["updated_at", "2023-03-31 10:32:56.886588"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "Solomon Islands"], ["comment", "Explicabo eaque ipsa et."], ["user_id", 15], ["recipe_id", 22], ["created_at", "2023-03-31 10:32:56.899885"], ["updated_at", "2023-03-31 10:32:56.899885"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "Isle of Man"], ["comment", "Ut facilis rerum fuga."], ["user_id", 7], ["recipe_id", 9], ["created_at", "2023-03-31 10:32:56.911394"], ["updated_at", "2023-03-31 10:32:56.911394"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "Christmas Island"], ["comment", "Veritatis iure tempore omnis."], ["user_id", 15], ["recipe_id", 11], ["created_at", "2023-03-31 10:32:56.923848"], ["updated_at", "2023-03-31 10:32:56.923848"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "Mozambique"], ["comment", "Similique autem rem labore."], ["user_id", 4], ["recipe_id", 19], ["created_at", "2023-03-31 10:32:56.936335"], ["updated_at", "2023-03-31 10:32:56.936335"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "Indonesia"], ["comment", "Dolor laboriosam perspiciatis totam."], ["user_id", 16], ["recipe_id", 17], ["created_at", "2023-03-31 10:32:56.948853"], ["updated_at", "2023-03-31 10:32:56.948853"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "Brazil"], ["comment", "Tempora veniam cumque minus."], ["user_id", 2], ["recipe_id", 28], ["created_at", "2023-03-31 10:32:56.961601"], ["updated_at", "2023-03-31 10:32:56.961601"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "Cocos (Keeling) Islands"], ["comment", "Voluptas corporis eius consequatur."], ["user_id", 7], ["recipe_id", 16], ["created_at", "2023-03-31 10:32:56.974456"], ["updated_at", "2023-03-31 10:32:56.974456"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("origin", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["origin", "Azerbaijan"], ["comment", "Molestiae nulla esse voluptatibus."], ["user_id", 10], ["recipe_id", 11], ["created_at", "2023-03-31 10:32:56.987656"], ["updated_at", "2023-03-31 10:32:56.987656"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/recipes" for 127.0.0.1 at 2023-03-31 13:33:49 +0300
+  [1m[35m (7.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as */*
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 3]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 4]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 5]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 6]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 7]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 8]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 9]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 10]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 11]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 12]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 13]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 14]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 15]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 16]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 17]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 18]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 19]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 20]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 21]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 22]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 23]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 24]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 25]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 26]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 27]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 28]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 29]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 30]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (541.86ms)
+Completed 201 Created in 768ms (Views: 617.2ms | ActiveRecord: 21.1ms | Allocations: 61741)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-03-31 14:23:00 +0300
+Processing by RecipesController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/recipes_controller.rb:9:in `index'
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 3]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 3]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.6ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 4]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 4]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 5]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 5]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 6]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 6]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 7]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 7]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 8]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 8]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 9]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 9]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 10]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 10]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 11]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 11]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 12]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 12]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 13]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 13]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 14]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 14]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 15]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 15]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 16]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 16]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 17]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 17]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (4.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 18]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 18]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 19]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 19]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 20]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 20]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 21]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 21]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 22]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 22]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 23]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 23]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 24]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 24]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 25]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 25]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 26]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 26]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 27]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 27]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.6ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 28]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 28]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 29]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 29]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 30]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 30]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (493.7ms)
+Completed 201 Created in 525ms (Views: 517.0ms | ActiveRecord: 25.5ms | Allocations: 83941)
+
+
+Started GET "/recipes/3" for 127.0.0.1 at 2023-03-31 14:25:58 +0300
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for RecipesController
+Did you mean?  authorized
+               index
+               create):
+  
+actionpack (6.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/recipes/show" for 127.0.0.1 at 2023-03-31 14:32:13 +0300
+Processing by RecipesController#show as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/recipes_controller.rb:13:in `show'
+Completed 404 Not Found in 11ms (ActiveRecord: 0.4ms | Allocations: 2086)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recipe without an ID):
+  
+app/controllers/recipes_controller.rb:13:in `show'
+Started GET "/favorites" for 127.0.0.1 at 2023-03-31 14:41:25 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favorites"):
+  
+Started GET "/favorites/index" for 127.0.0.1 at 2023-03-31 14:41:49 +0300
+Processing by FavoritesController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/favorites_controller.rb:8:in `index'
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Recipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Recipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Recipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (236.13ms)
+Completed 200 OK in 260ms (Views: 255.6ms | ActiveRecord: 10.0ms | Allocations: 53998)
+
+
+Started GET "/favorites/3" for 127.0.0.1 at 2023-03-31 14:43:18 +0300
+Processing by FavoritesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/favorites_controller.rb:44:in `set_favorite'
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:44:in `set_favorite'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:13:in `show'
+[active_model_serializers] Rendered FavoriteSerializer with ActiveModelSerializers::Adapter::Attributes (56.62ms)
+Completed 200 OK in 80ms (Views: 54.3ms | ActiveRecord: 7.5ms | Allocations: 15989)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-03-31 14:46:12 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/3"):
+  
+Started GET "/users/3" for 127.0.0.1 at 2023-03-31 14:46:35 +0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+[active_model_serializers]   [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:9:in `show'
+[active_model_serializers]   [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "favorites" ON "recipes"."id" = "favorites"."recipe_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:9:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (34.77ms)
+Completed 200 OK in 51ms (Views: 34.4ms | ActiveRecord: 3.6ms | Allocations: 16562)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2023-03-31 14:50:46 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/users/create"):
+  
+Started POST "/create" for 127.0.0.1 at 2023-03-31 14:51:17 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Messi", "email"=>"messi@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Messi"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Messi"], ["email", "messi@gmail.com"], ["password_digest", "$2a$12$eF662BWHCkDq/JU2Y8LLdOK8NXgY/x8tVLs2oRVpOJFX7jRxnWN36"], ["created_at", "2023-03-31 11:51:17.711738"], ["updated_at", "2023-03-31 11:51:17.711738"]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Messi"], ["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+[active_model_serializers]   [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 19]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `create'
+[active_model_serializers]   [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "favorites" ON "recipes"."id" = "favorites"."recipe_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 19]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (9.77ms)
+Completed 201 Created in 319ms (Views: 10.3ms | ActiveRecord: 10.8ms | Allocations: 8028)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-31 14:52:28 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Messi", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Messi"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[active_model_serializers]   [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 19]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:10:in `create'
+[active_model_serializers]   [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "favorites" ON "recipes"."id" = "favorites"."recipe_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 19]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:10:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (8.2ms)
+Completed 200 OK in 260ms (Views: 8.7ms | ActiveRecord: 0.8ms | Allocations: 2916)
+
+
+Started GET "/favorites/5" for 127.0.0.1 at 2023-03-31 14:55:43 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by FavoritesController#show as */*
+  Parameters: {"username"=>"Messi", "password"=>"[FILTERED]", "id"=>"5", "favorite"=>{}}
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:44:in `set_favorite'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/favorites_controller.rb:13:in `show'
+[active_model_serializers] Rendered FavoriteSerializer with ActiveModelSerializers::Adapter::Attributes (49.68ms)
+Completed 200 OK in 63ms (Views: 49.4ms | ActiveRecord: 4.4ms | Allocations: 14450)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-31 14:58:05 +0300
+Processing by SessionsController#destroy as */*
+  Parameters: {"username"=>"Messi", "password"=>"[FILTERED]"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 2ms (Views: 1.8ms | Allocations: 660)
+
+
+Started DELETE "/recipe" for 127.0.0.1 at 2023-03-31 14:58:19 +0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/recipe"):
+  
+Started GET "/recipes" for 127.0.0.1 at 2023-03-31 14:58:31 +0300
+Processing by RecipesController#index as */*
+  Parameters: {"username"=>"Messi", "password"=>"[FILTERED]"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.7ms | Allocations: 337)
+
+

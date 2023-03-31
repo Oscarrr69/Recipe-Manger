@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     wrap_parameters format: []
-    before_action :authorized
+    skip_before_action :authorized, only: :create 
 
     # GET /users/1
   def show
@@ -13,18 +13,18 @@ class UsersController < ApplicationController
     if user.valid?
       render json: user, status: :created
     else
-      render json: user.errors, status: :unprocessable_entity
+      render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      user = User.find(params[:id])
-    end
+    # def set_user
+    #   user = User.find(params[:id])
+    # end
     # Only allow a list of trusted parameters through.
     def user_params
-      params.permit(:username, :email, :year_born, :password)
+      params.permit(:username, :email, :password, :password_confirmation)
     end
     
 end

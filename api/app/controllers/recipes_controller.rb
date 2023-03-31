@@ -1,13 +1,17 @@
 class RecipesController < ApplicationController
     wrap_parameters format: []
 
-    # before_action :authorize
-
 
    def index 
         recipes = Recipe.all 
         render json: recipes, status: :created
    end
+
+   def show 
+        recipe = Recipe.find(session[:id])   
+        render json: recipe, status: :created 
+   end 
+    
 
    def create
 
@@ -29,9 +33,9 @@ class RecipesController < ApplicationController
 
 
    private 
-   def authorize
-    errors_method unless session.include? :user_id
-   end
+#    def authorize
+#     errors_method unless session.include? :user_id
+#    end
 
 
    def errors_method 

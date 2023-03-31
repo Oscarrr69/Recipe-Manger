@@ -1,4 +1,6 @@
 class RecipeSerializer < ActiveModel::Serializer
   attributes :id, :title, :instructions, :minutes_to_complete
-  has_many :users
+
+  has_many :favorites
+  has_many :users, through: :favorites
 end
